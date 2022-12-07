@@ -11,3 +11,136 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  width: 60%;
+  margin: auto;
+  background: rgb(253, 84, 108);
+  background: linear-gradient(
+    90deg,
+    rgba(253, 84, 108, 1) 24%,
+    rgba(255, 120, 84, 0.896796218487395) 65%,
+    rgba(255, 120, 84, 1) 83%
+  );
+}
+.linkas {
+  font-size: 150px;
+  display: inline-block;
+  border: 2px solid black;
+  margin: 50px;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+.linkas:hover {
+  transform: scale(1.1);
+}
+.flex {
+  display: flex;
+}
+.flex-d-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-body {
+  text-align: right;
+  padding: 20px 10px;
+  gap: 19px;
+}
+label {
+  font-size: 1.5em;
+}
+.form__label {
+  width: 40%;
+}
+.form-create-input {
+  max-width: 70%;
+}
+.form__input {
+  width: 60%;
+  font-size: 40px;
+}
+.text-success {
+  color: green;
+}
+.text-danger {
+  color: red;
+}
+.text-blue {
+  color: rgb(113, 113, 240);
+}
+.profilePic {
+  display: inline-block;
+  width: 30%;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+.profileBtn {
+  border-radius: 20px;
+  font-size: 20px;
+  color: blue;
+}
+.profile {
+  align-items: center;
+}
+.profileAddImgText {
+  width: 250px;
+}
+.profileImageArray {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+.profileImageArray img {
+  width: 80%;
+  height: 260px;
+  padding: 10px;
+  overflow: hidden;
+}
+.profileImageArray img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgb(33, 33, 33);
+  transition-duration: 0.8s;
+}
+.profileGallery {
+  border: 2px solid rgba(0, 0, 0, 0.161);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profileGalleryBtn {
+  margin: 0 10px 10px 0;
+}
+.logOutBtn {
+  margin: 0 10px 10px 0;
+}
+.logOutBtn {
+  align-self: center;
+  width: 20%;
+  font-size: 2em;
+}
+.animationShake:hover {
+  animation: shake 0.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
