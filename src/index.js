@@ -9,6 +9,7 @@ import Profile from './components/profile';
 import UserPage from './components/userPage';
 import MainPage from './components/mainPage';
 import DatePage from './components/datePage';
+import ProtectedRoutes from './components/authComponent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,7 +22,7 @@ root.render(
         <Route path='/userPage' element={<UserPage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/create' element={<Create />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' component={<Profile />} element={<Profile />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Select from 'react-select';
 
 const Create = () => {
   const [username, setUsername] = useState(null);
@@ -10,6 +11,10 @@ const Create = () => {
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
   const [age, setAge] = useState(null);
+  const options = [
+    { value: 'Male', label: 'Diedas' },
+    { value: 'Female', label: 'Motriška' },
+  ];
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     if (id === 'username') {
@@ -58,6 +63,10 @@ const Create = () => {
       .catch((error) => {
         error = new Error();
       });
+  };
+  const handleSelect = (e) => {
+    console.log(e);
+    setGender(e.value);
   };
 
   return (
@@ -121,14 +130,19 @@ const Create = () => {
           <label className='form__label' for='gender'>
             Gender{' '}
           </label>
-          <input
+          <Select
+            options={options}
+            value={options.value}
+            onChange={handleSelect}
+          />
+          {/* <input
             type='gender'
             id='gender'
             className='form__input'
             value={gender}
             onChange={(e) => handleInputChange(e)}
             placeholder='gender'
-          />
+          /> */}
         </div>
         <div className='form-create-input'>
           <label className='form__label' for='age'>

@@ -5,15 +5,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgba(227, 205, 209, 0.589);
+  background: linear-gradient(
+    90deg,
+    rgba(253, 84, 109, 0.489) 24%,
+    rgba(255, 121, 84, 0.291) 65%,
+    rgba(255, 121, 84, 0.216) 83%
+  );
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.css-b62m3t-container {
+  width: 61%;
+  display: inline-block;
+}
 .container {
   width: 60%;
+  padding: 30px;
   margin: auto;
   background: rgb(253, 84, 108);
   background: linear-gradient(
@@ -22,9 +33,13 @@ code {
     rgba(255, 120, 84, 0.896796218487395) 65%,
     rgba(255, 120, 84, 1) 83%
   );
+  border-radius: 100px;
+  box-shadow: 3px -1px 85px 42px rgba(242, 195, 195, 1);
+  -webkit-box-shadow: 3px -1px 85px 42px rgba(242, 195, 195, 1);
+  -moz-box-shadow: 3px -1px 85px 42px rgba(242, 195, 195, 1);
 }
 .linkas {
-  font-size: 150px;
+  font-size: 100px;
   display: inline-block;
   border: 2px solid black;
   margin: 50px;
@@ -89,16 +104,30 @@ label {
   width: 250px;
 }
 .profileImageArray {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   margin-bottom: 40px;
   padding: 20px;
 }
 .profileImageArray img {
-  width: 80%;
+  width: 100%;
+  object-fit: contain;
   height: 260px;
   padding: 10px;
   overflow: hidden;
+}
+.thumb {
+  height: 80px;
+}
+.thumb img {
+  object-fit: cover;
+  height: 100%;
+}
+.thumb:hover {
+  transform: scale(2);
+}
+.thumbs {
+  display: flex;
+  justify-content: center;
 }
 .profileImageArray img:hover {
   transform: scale(1.1);
@@ -108,6 +137,8 @@ label {
 .profileGallery {
   border: 2px solid rgba(0, 0, 0, 0.161);
   display: flex;
+  width: 60%;
+  margin: auto;
   flex-direction: column;
   align-items: center;
 }
@@ -127,20 +158,98 @@ label {
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 }
+.datingWindow {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.datingWindow img {
+  height: 300px;
+  object-fit: contain;
+}
+.likeDislike {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.dislikeBtn {
+  color: black;
+  height: 40px;
+  border-radius: 40%;
+  background-color: red;
+}
+.dislikeBtn:hover {
+  animation: shake 0.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation-iteration-count: infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+.likeBtn {
+  color: black;
+  height: 40px;
+  border-radius: 40%;
+  background-color: green;
+  /* transform: translate(-50%, -50%); */
+}
+.likeBtn:hover {
+  animation: pop 1.2s infinite;
+}
+.filterForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelis {
+  font-size: 15px;
+  margin: auto;
+}
+.historyDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.historyUl li {
+  list-style: none;
+  font-size: 1.5em;
+}
 @keyframes shake {
   0% {
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(5deg);
+    transform: rotate(10deg);
   }
   50% {
     transform: rotate(0eg);
   }
   75% {
-    transform: rotate(-5deg);
+    transform: rotate(-10deg);
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-30px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
   }
 }

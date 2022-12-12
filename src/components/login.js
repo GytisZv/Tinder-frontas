@@ -28,6 +28,7 @@ function Login() {
           setLogin(true);
           cookies.set('TOKEN', result.data.token, {
             path: '/',
+            maxAge: 36000,
           });
           window.location.href = '/profile';
         }
