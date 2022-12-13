@@ -39,30 +39,35 @@ const Create = () => {
 
   const handleSubmit = () => {
     console.log(username, password, city, gender, age, confirmPassword);
-    const configuration = {
-      method: 'post',
-      url: 'http://localhost:3001/register',
-      data: {
-        username,
-        password,
-        age,
-        city,
-        gender,
-      },
-    };
-    axios(configuration)
-      .then((result) => {
-        if (result.data.message === 'taken') {
-          alert('Username is already taken');
-        } else if (result.data.message === 'empty') {
-          alert('Some of the fields are empty');
-        } else {
-          setRegister(true);
-        }
-      })
-      .catch((error) => {
-        error = new Error();
-      });
+    if (password === confirmPassword) {
+      const configuration = {
+        method: 'post',
+        url: 'http://localhost:3001/register',
+        data: {
+          username,
+          password,
+          age,
+          city,
+          gender,
+        },
+      };
+      axios(configuration)
+        .then((result) => {
+          if (result.data.message === 'taken') {
+            alert('Username is already taken');
+          } else if (result.data.message === 'empty') {
+            alert('Some of the fields are empty');
+          } else {
+            setRegister(true);
+          }
+        })
+        .catch((error) => {
+          error = new Error();
+        });
+    }
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+    }
   };
   const handleSelect = (e) => {
     console.log(e);

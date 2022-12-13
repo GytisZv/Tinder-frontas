@@ -3,7 +3,7 @@ import LogOut from './logOut';
 
 function MainPage() {
   return (
-    <div className='container'>
+    <div className=''>
       <div className='container flex-d-c'>
         <Link className='linkas' to='/profile'>
           Profile
